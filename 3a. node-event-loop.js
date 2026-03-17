@@ -171,38 +171,38 @@
  *
  */
 
-const crypto = require('crypto');
+// const crypto = require('crypto');
 
-console.log('\n=== EXPERIMENT 8: crypto.pbkdf2 ===');
+// console.log('\n=== EXPERIMENT 8: crypto.pbkdf2 ===');
 
-console.log('[Sync] Start');
+// console.log('[Sync] Start');
 
-crypto.pbkdf2('password', 'salt', 100000, 64, 'sha512', () => {
-  console.log('[Poll] crypto.pbkdf2 callback');
+// crypto.pbkdf2('password', 'salt', 100000, 64, 'sha512', () => {
+//   console.log('[Poll] crypto.pbkdf2 callback');
 
-  process.nextTick(() => {
-    console.log('[nextTick] inside crypto');
-  });
+//   process.nextTick(() => {
+//     console.log('[nextTick] inside crypto');
+//   });
 
-  Promise.resolve().then(() => {
-    console.log('[Promise] inside crypto');
-  });
+//   Promise.resolve().then(() => {
+//     console.log('[Promise] inside crypto');
+//   });
 
-  setImmediate(() => {
-    console.log('[Check] setImmediate inside crypto');
-  });
+//   setImmediate(() => {
+//     console.log('[Check] setImmediate inside crypto');
+//   });
 
-  setTimeout(() => {
-    console.log('[Timer] setTimeout(0) inside crypto');
-  }, 0);
-});
+//   setTimeout(() => {
+//     console.log('[Timer] setTimeout(0) inside crypto');
+//   }, 0);
+// });
 
-setImmediate(() => {
-  console.log('[Check] setImmediate');
-});
+// setImmediate(() => {
+//   console.log('[Check] setImmediate');
+// });
 
-setTimeout(() => {
-  console.log('[Timer] setTimeout(0)');
-}, 0);
+// setTimeout(() => {
+//   console.log('[Timer] setTimeout(0)');
+// }, 0);
 
-console.log('[Sync] End');
+// console.log('[Sync] End');
